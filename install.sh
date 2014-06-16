@@ -1,7 +1,15 @@
 git --version 2>&1 >/dev/null
-GIT_IS_AVAILABLE=$?
+HAS_GIT=$?
+dpkg-query -l "vim-gtk"
+HAS_VIMGTK=$?
 
-if [ $GIT_IS_AVAILABLE -eq 0 ]; then
+if [ $HAS_VIMGTK -eq 1]; then
+    echo "Please install the vim-gtk package and rerun this script."
+    exit 1
+fi
+
+
+if [ $HAS_GIT -eq 0 ]; then
     echo "Installing..."
 else
     echo "Git is not installed. Please install git."
