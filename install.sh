@@ -1,9 +1,14 @@
+set -e
+
 git --version 2>&1 >/dev/null
 HAS_GIT=$?
-dpkg-query -l "vim-gtk"
+dpkg -s "vim-gtk" &>/dev/null
 HAS_VIMGTK=$?
 
-if [ $HAS_VIMGTK -eq 1]; then
+VUNDLE_URL=https://github.com/gmarik/Vundle.vim.git
+VUNDLE_DIR=~/.vim/bundle/Vundle.vim
+
+if [ $HAS_VIMGTK -eq 1 ]; then
     echo "Please install the vim-gtk package and rerun this script."
     exit 1
 fi
@@ -18,8 +23,14 @@ fi
 
 echo "Copying .vimrc to home directory."
     cp .vimrc ~/.vimrc
+
 echo "Cloning vundle to home directory."
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+if [ ! -d $VUNDLE_DIR ]; then
+    git clone $VUNDLE_URL $VUNDLE_DIR
+fi
+
 echo "Installing plugins..."
     vim +PluginInstall +qall
+
 echo Done.

@@ -2,28 +2,24 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
 set nocompatible
-
 filetype off                  " required!
-syntax on
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-"
-
-Bundle 'beyondwords/vim-twig'
-Bundle 'othree/html5.vim'
-Bundle 'Shougo/neosnippet.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'elzr/vim-json'
-Bundle 'jelera/vim-javascript-syntax'
+Plugin 'beyondwords/vim-twig'
+Plugin 'othree/html5.vim'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'elzr/vim-json'
+Plugin 'jelera/vim-javascript-syntax'
 
 autocmd FileType php setlocal completefunc=phpcomplete_extended#CompletePHP
 
@@ -31,13 +27,13 @@ filetype plugin indent on
 
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install (update) bundles
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowed.
+" NOTE: comments after Plugin commands are not allowed.
 
 
 " Plugin key-mappings.
