@@ -9,12 +9,13 @@ error () {
 
 trap error ERR
 
+checklist=(git vim-gtk)
 
-echo Checking to see if you have git installed.
-dpkg -s "git" > /dev/null
-
-echo Checking to see if you have vim-gtk installed.
-dpkg -s "vim-gtk" > /dev/null
+for package in "${checklist[@]}"
+do
+    echo Checking to see if you have $package installed
+    dpkg -s $package > /dev/null
+done
 
 echo Copying .vimrc to home directory.
     cp .vimrc ~/.vimrc
