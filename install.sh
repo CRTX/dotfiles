@@ -1,33 +1,28 @@
-set -e
+#!/bin/bash
 
-git --version 2>&1 >/dev/null
-HAS_GIT=$?
-dpkg -s "vim-gtk" &>/dev/null
-HAS_VIMGTK=$?
+VundleUrl=https://github.com/gmarik/Vundle.vim.git
+VundleDirectory=~/.vim/bundle/Vundle.vim
 
-VUNDLE_URL=https://github.com/gmarik/Vundle.vim.git
-VUNDLE_DIR=~/.vim/bundle/Vundle.vim
+error () {
+    echo "Installation failed. Check for any error messages and try again."
+    exit 1;
+}
 
-if [ $HAS_VIMGTK -eq 1 ]; then
-    echo "Please install the vim-gtk package and rerun this script."
-    exit 1
-fi
+trap error ERR
 
+echo "Checking to see if you have git installed."
+check=$(dpkg -s "git")
 
-if [ $HAS_GIT -eq 0 ]; then
-    echo "Installing..."
-else
-    echo "Git is not installed. Please install git."
-    exit 1
-fi
+echo "Checking if you have vim-gtk installed."
+check=$(dpkg -s "vim-gtk")
 
 echo "Copying .vimrc to home directory."
     cp .vimrc ~/.vimrc
 
-echo "Cloning vundle to home directory."
+echo "Git cloning vundle to home directory."
 
-if [ ! -d $VUNDLE_DIR ]; then
-    git clone $VUNDLE_URL $VUNDLE_DIR
+if [ ! -d $VundleDirectory ]; then
+    git clone $VundleUrl $VundleDirectory
 fi
 
 echo "Installing plugins..."
