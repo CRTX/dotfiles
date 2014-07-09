@@ -49,3 +49,6 @@ if &t_Co > 2 || has("gui_running")
     :highlight ExtraWhitespace ctermbg=red guibg=red
     :match ExtraWhitespace /\s\+$/
 endif
+
+" Because why enter this every time?
+autocmd VimEnter * NERDTree
