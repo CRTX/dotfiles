@@ -39,3 +39,13 @@ filetype plugin indent on    " required
 " NOTE: comments after Plugin commands are not allowed.
 
 :hi Directory guifg=#FF0000 ctermfg=red
+
+
+" color settings (if terminal/gui supports it)
+if &t_Co > 2 || has("gui_running")
+    syntax on
+    set list
+    " Highlight trailing whitespaces.
+    :highlight ExtraWhitespace ctermbg=red guibg=red
+    :match ExtraWhitespace /\s\+$/
+endif
