@@ -18,7 +18,7 @@ do
 done
 
 echo Copying .vimrc to home directory.
-    cp .vimrc ~/.vimrc
+    cp vimrc ~/.vimrc
 
 echo Git cloning vundle plugin to home directory.
 
