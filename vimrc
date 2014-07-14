@@ -52,3 +52,8 @@ endif
 
 " Because why enter this every time?
 autocmd VimEnter * NERDTree
+
+augroup vimrc_autocmds
+    autocmd BufEnter * highlight OverLength ctermbg=yellow guibg=#111111
+    autocmd BufEnter * match OverLength /\%70v.*/
+augroup END
