@@ -2,6 +2,7 @@
 
 VundleUrl=https://github.com/gmarik/Vundle.vim.git
 VundleDirectory=~/.vim/bundle/Vundle.vim
+VimDirectory=~/.vim
 
 error () {
     exit 1;
@@ -18,8 +19,12 @@ do
 done
 
 echo Making backup and temporary files folder.
-mkdir ~/.vim/backup
-mkdir ~/.vim/tmp
+if [ ! -d $VimDirectory/backup ]; then
+    mkdir $VimDirectory/backup
+fi
+if [ ! -d $VimDirectory/tmp ]; then
+    mkdir $VimDirectory/tmp
+fi
 
 echo Copying .vimrc to home directory.
     cp vimrc ~/.vimrc
