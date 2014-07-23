@@ -17,6 +17,10 @@ do
     dpkg -s $package > /dev/null
 done
 
+echo Making backup and temporary files folder.
+mkdir ~/.vim/backup
+mkdir ~/.vim/tmp
+
 echo Copying .vimrc to home directory.
     cp vimrc ~/.vimrc
 

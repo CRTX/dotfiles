@@ -7,7 +7,10 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " Directories are red.
-:hi Directory guifg=#FF0000 ctermfg=red
+":hi Directory guifg=#FF0000 ctermfg=white
+
+"Highlight last pasted visual block
+nnoremap gp `[v`]
 
 " color settings (if terminal/gui supports it)
 if &t_Co > 2 || has("gui_running")
@@ -38,6 +41,7 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+Plugin 'joonty/vdebug'
 Plugin 'gmarik/vundle'
 Plugin 'beyondwords/vim-twig'
 Plugin 'othree/html5.vim'
@@ -166,3 +170,26 @@ endif
 highlight Pmenu ctermbg=Black ctermfg=White guibg=#000000
 highlight PmenuSel ctermbg=Red ctermfg=White guifg=#FF0000 guibg=#0000FF
 highlight PmenuSbar ctermbg=White ctermfg=Black guibg=#FFFFFF
+
+"vdebug options
+let g:vdebug_options= {
+\    "port" : 9000,
+\    "server" : 'localhost',
+\    "timeout" : 20,
+\    "on_close" : 'detach',
+\    "break_on_open" : 1,
+\    "ide_key" : '',
+\    "path_maps" : {},
+\    "debug_window_level" : 0,
+\    "debug_file_level" : 0,
+\    "debug_file" : "",
+\    "watch_window_style" : 'expanded',
+\    "marker_default" : '⬦',
+\    "marker_closed_tree" : '▸',
+\    "marker_open_tree" : '▾'
+\}
+
+"Because gitignoring these every time is tedious.
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
