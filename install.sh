@@ -20,10 +20,10 @@ done
 
 echo Making backup and temporary files folder.
 if [ ! -d $VimDirectory/backup ]; then
-    mkdir $VimDirectory/backup
+    mkdir -p $VimDirectory/backup
 fi
 if [ ! -d $VimDirectory/tmp ]; then
-    mkdir $VimDirectory/tmp
+    mkdir -p $VimDirectory/tmp
 fi
 
 echo Copying .vimrc to home directory.
