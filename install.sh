@@ -1,8 +1,8 @@
 #!/bin/bash
 
 VundleUrl=https://github.com/gmarik/Vundle.vim.git
-VundleDirectory=~/.vim/bundle/Vundle.vim
 VimDirectory=~/.vim
+VundleDirectory=$VimDirectory/bundle/Vundle.vim
 
 error () {
     exit 1;
