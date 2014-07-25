@@ -26,7 +26,7 @@ for package in "${checklist[@]}"; do
 done
 
 echo Making backup and temporary files folder.
-for directory in "${RequiredDirectories}"; do
+for directory in "${RequiredDirectories[@]}"; do
     makeDir $directory
 done
 
