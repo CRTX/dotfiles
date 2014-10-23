@@ -2,6 +2,7 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
+au BufRead,BufNewFile *.dart set filetype=dart
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -53,9 +54,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'elzr/vim-json'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'dart-lang/dart-vim-plugin'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
