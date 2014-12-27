@@ -8,7 +8,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " Directories are red.
-":hi Directory guifg=#FF0000 ctermfg=white
+:hi Directory guifg=#FF0000 ctermfg=red
 
 "Highlight last pasted visual block
 nnoremap gp `[v`]
