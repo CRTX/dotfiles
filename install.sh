@@ -41,5 +41,6 @@ fi
 
 echo Installing vundle plugins...
     vim +PluginInstall +qall
+    cp neosnippets/php.snip $HOME/.vim/bundle/neosnippet-snippets/neosnippets/php.snip
 
 echo Done.
