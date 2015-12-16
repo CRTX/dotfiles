@@ -27,8 +27,8 @@ endif
 autocmd VimEnter * NERDTree
 
 augroup vimrc_autocmds
-    autocmd BufEnter * highlight OverLength ctermbg=yellow guibg=#111111
-    autocmd BufEnter * match OverLength /\%70v.*/
+    autocmd BufEnter *.php highlight OverLength ctermbg=yellow guibg=#111111
+    autocmd BufEnter *.php match OverLength /\%70v.*/
 augroup END
 
 " set the runtime path to include Vundle and initialize
@@ -57,6 +57,7 @@ Plugin 'elzr/vim-json'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'majutsushi/tagbar'
+Plugin 'gregsexton/MatchTag'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
