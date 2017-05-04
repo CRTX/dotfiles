@@ -3,6 +3,7 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set pastetoggle=<F2>
 au BufRead,BufNewFile *.dart set filetype=dart
 
 set nocompatible              " be iMproved, required
@@ -26,10 +27,10 @@ endif
 " Because why enter this every time?
 autocmd VimEnter * NERDTree
 
-augroup vimrc_autocmds
-    autocmd BufEnter *.php highlight OverLength ctermbg=yellow guibg=#111111
-    autocmd BufEnter *.php match OverLength /\%70v.*/
-augroup END
+"augroup vimrc_autocmds
+"    autocmd BufEnter *.php highlight OverLength ctermbg=yellow guibg=#111111
+"    autocmd BufEnter *.php match OverLength /\%70v.*/
+"augroup END
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -43,21 +44,25 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'joonty/vdebug'
-Plugin 'gmarik/vundle'
-Plugin 'beyondwords/vim-twig'
-Plugin 'othree/html5.vim'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet.vim'
-Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/context_filetype.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'jceb/vim-hier'
+Plugin 'dannyob/quickfixstatus'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'beyondwords/vim-twig'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'elzr/vim-json'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'majutsushi/tagbar'
+Plugin 'elzr/vim-json'
+Plugin 'gmarik/vundle'
 Plugin 'gregsexton/MatchTag'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'joonty/vdebug'
+Plugin 'majutsushi/tagbar'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'othree/html5.vim'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -199,3 +204,4 @@ let g:vdebug_options= {
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
+let NERDTreeIgnore = ['\.class$']
