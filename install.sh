@@ -17,7 +17,7 @@ makeDir () {
 
 trap error ERR
 
-checklist=(git vim-gtk exuberant-ctags)
+checklist=(git vim-gtk exuberant-ctags tmux)
 
 for package in "${checklist[@]}"; do
     echo Checking to see if you have $package installed...
