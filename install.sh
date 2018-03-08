@@ -17,7 +17,7 @@ makeDir () {
 
 trap error ERR
 
-sudo apt update && sudo apt install git vim-gtk exuberant-ctags tmux -y
+sudo apt update && sudo apt install git vim-gtk exuberant-ctags tmux build-essential ruby-dev -y
 
 checklist=(git vim-gtk exuberant-ctags tmux)
 
