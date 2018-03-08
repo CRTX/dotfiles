@@ -17,6 +17,8 @@ makeDir () {
 
 trap error ERR
 
+sudo apt update && sudo apt install git vim-gtk exuberant-ctags tmux -y
+
 checklist=(git vim-gtk exuberant-ctags tmux)
 
 for package in "${checklist[@]}"; do
@@ -42,5 +44,12 @@ fi
 echo Installing vundle plugins...
     vim +PluginInstall +qall
     cp neosnippets/php.snip $HOME/.vim/bundle/neosnippet-snippets/neosnippets/php.snip
+
+echo "Compiling command-t vim plugin..."
+cd ~/.vim/bundle/command-t/ruby/command-t/ext/command-t && \
+ruby extconf.rb && \
+make
+
+echo .bashrc >> ~/.bashrc
 
 echo Done.

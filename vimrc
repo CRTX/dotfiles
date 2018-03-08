@@ -25,7 +25,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " Because why enter this every time?
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 
 "augroup vimrc_autocmds
 "    autocmd BufEnter *.php highlight OverLength ctermbg=yellow guibg=#111111
@@ -63,6 +63,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'othree/html5.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'wincent/command-t'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
